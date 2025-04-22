@@ -69,7 +69,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-8xl font-heading font-semibold tracking-wide text-white"
+          className="lg:text-8xl md:text-7xl sm:text-xl font-heading font-semibold tracking-wide text-white"
         >
           {renderAnimatedText("Ivan")}
           <br />
@@ -77,7 +77,7 @@ export default function Hero() {
           <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-300 via-white to-green-300 scale-x-0 hover:scale-x-100 transition-transform duration-300 ease-in-out" />
         </motion.h1>
 
-        <h2 className="text-green-400 text-2xl font-thin tracking-widest mt-6 px-1 flex items-center font-mono">
+        <h2 className="text-green-400 md:text-lg lg:text-2xl sm:text-md font-thin tracking-widest mt-6 px-1 flex items-center font-mono">
           {displayedText}
           <span className="w-[1ch] ml-1 animate-cursor text-green-400">|</span>
           {!isTyping && (
@@ -104,7 +104,7 @@ export default function Hero() {
           <img
             src="public/ivanAvatar.png"
             alt="Ivan Mitkovski avatar"
-            className="h-96 w-96 rounded-full object-cover border-4 border-green-400"
+            className="md:h-80 md:w-80 lg:h-96 lg:w-96 rounded-full object-cover border-4 border-green-400"
           />
         </motion.div>
       </div>
