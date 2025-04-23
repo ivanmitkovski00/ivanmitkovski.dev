@@ -63,35 +63,32 @@ export default function Hero() {
     ));
 
   return (
-    <div className="py-18 px-7 flex justify-between">
-      <div>
+    <div className="py-12 px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between items-center">
+      <div className="w-full lg:w-1/2 text-center lg:text-left">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="lg:text-8xl md:text-7xl sm:text-xl font-heading font-semibold tracking-wide text-white"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-semibold tracking-wide text-white leading-tight"
         >
           {renderAnimatedText("Ivan")}
           <br />
           {renderAnimatedText("Mitkovski")}
-          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-300 via-white to-green-300 scale-x-0 hover:scale-x-100 transition-transform duration-300 ease-in-out" />
+          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-300 via-white to-green-300 transform scale-x-0 hover:scale-x-100 transition-transform duration-300 ease-in-out" />
         </motion.h1>
 
-        <h2 className="text-green-400 md:text-lg lg:text-2xl sm:text-md font-thin tracking-widest mt-6 px-1 flex items-center font-mono">
+        <h2 className="mt-6 text-base sm:text-lg md:text-xl lg:text-2xl font-thin tracking-widest px-1 flex justify-center lg:justify-start items-center font-mono text-green-400">
           {displayedText}
-          <span className="w-[1ch] ml-1 animate-cursor text-green-400">|</span>
-          {!isTyping && (
-            <span className="ml-2 animate-dots text-green-400">{dots}</span>
-          )}
+          <span className="w-[1ch] ml-1 animate-cursor">|</span>
+          {!isTyping && <span className="ml-2 animate-dots">{dots}</span>}
         </h2>
-        <div></div>
       </div>
 
-      <div className="perspective-[1000px] z-10">
+      <div className="mt-8 lg:mt-0 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 perspective-[1000px] z-10">
         <motion.div
-          className="relative"
+          className="relative w-full h-full"
           drag="y"
-          dragConstraints={{ left: 0, right: 300 }}
+          dragConstraints={{ top: 0, bottom: 300 }}
           whileTap={{ rotateY: 180 }}
           style={{ transformStyle: "preserve-3d" }}
           transition={{
@@ -104,7 +101,7 @@ export default function Hero() {
           <img
             src="public/ivanAvatar.png"
             alt="Ivan Mitkovski avatar"
-            className="md:h-80 md:w-80 lg:h-96 lg:w-96 rounded-full object-cover border-4 border-green-400"
+            className="w-full h-full object-cover rounded-full border-4 border-green-400"
           />
         </motion.div>
       </div>
