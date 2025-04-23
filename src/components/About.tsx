@@ -1,3 +1,4 @@
+import React from "react";
 import VerticalTimeline from "./VerticalTimeline";
 import Experience from "./Experience";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -5,31 +6,41 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
+
 export default function About() {
   return (
-    <div className="px-7 py-10 mt-18">
-      <h3 className="text-white text-7xl font-semibold">About</h3>
-      <div className="flex items-center space-x-10 mt-18">
-        <div className="w-1/2">
-          <div className="max-w-2xl mx-auto text-[#E0E0E0]">
-            <p className=" text-base md:text-lg font-light leading-relaxed tracking-normal text-left">
-              I’m a full‑stack software engineer dedicated to building
-              intuitive, high‑performance web applications. I approach every
-              project with an eye for clean architecture and efficient
-              interfaces—whether that means crafting a real‑time analytics
-              dashboard or designing a scalable API.
+    <section className="px-4 sm:px-7 py-8 sm:py-10">
+      <h3 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-center md:text-left">
+        About
+      </h3>
+      <div className="flex flex-col md:flex-row items-start md:items-center mt-8 md:mt-18 space-y-10 md:space-y-0 md:space-x-10">
+        {/* Left Text Block */}
+        <div className="w-full md:w-1/2">
+          <div className="max-w-2xl mx-auto md:mx-0 text-[#E0E0E0] space-y-4">
+            <p className="text-base sm:text-lg font-light leading-relaxed tracking-normal text-left">
+              I’m a full-stack software engineer dedicated to building intuitive,
+              high-performance web applications. I approach every project with an
+              eye for clean architecture and efficient interfaces—whether that
+              means crafting a real-time analytics dashboard or designing a
+              scalable API.
             </p>
-            <p className=" text-base md:text-lg font-light leading-relaxed tracking-normal mt-4 text-left">
-              When I’m not architecting code, you’ll find me exploring new
-              guitar riffs or hiking the trails around Skopje. I believe
-              curiosity, creativity, and a willingness to venture beyond your
-              comfort zone are the true ingredients of innovation—and that’s
-              exactly how I tackle every challenge.
+            <p className="text-base sm:text-lg font-light leading-relaxed tracking-normal text-left">
+              When I’m not architecting code, you’ll find me exploring new guitar
+              riffs or hiking the trails around Skopje. I believe curiosity,
+              creativity, and a willingness to venture beyond your comfort zone
+              are the true ingredients of innovation—and that’s exactly how I
+              tackle every challenge.
             </p>
           </div>
         </div>
-        <VerticalTimeline />
-        <div className="space-y-20 w-1/2">
+
+        {/* Timeline: hidden on mobile */}
+        <div className="hidden md:block w-full md:w-auto">
+          <VerticalTimeline />
+        </div>
+
+        {/* Experience Cards */}
+        <div className="w-full md:w-1/2 space-y-10">
           <Experience
             experience="IT SUPPORT SPECIALIST & WEB DEVELOPER"
             year={2024}
@@ -44,7 +55,12 @@ export default function About() {
           />
         </div>
       </div>
-      <div id="links" className="flex w-fit space-x-4 py-2 z-50 relative">
+
+      {/* Social & CV Links */}
+      <div
+        id="links"
+        className="flex flex-wrap justify-center md:justify-start items-center space-x-4 mt-8"
+      >
         <a
           href="https://github.com/ivanmitkovski00"
           target="_blank"
@@ -71,7 +87,7 @@ export default function About() {
           <FontAwesomeIcon icon={faEnvelope} size="2x" color="#E0E0E0" />
         </a>
         <a
-          href="public\Ivan Mitkovski - cv.pdf"
+          href="/Ivan Mitkovski - cv.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:scale-110 transition-transform duration-200"
@@ -80,6 +96,6 @@ export default function About() {
           <FontAwesomeIcon icon={faFileLines} size="2x" color="#E0E0E0" />
         </a>
       </div>
-    </div>
+    </section>
   );
 }

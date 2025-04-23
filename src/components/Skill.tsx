@@ -8,9 +8,11 @@ type Skill = {
 export default function Skill({ skillIcon, skillName }: Skill) {
   return (
     <div className="relative group overflow-hidden rounded-2xl">
-      <div className="flex items-center gap-5 px-8 py-6 bg-[#1E2024] rounded-2xl shadow-md hover:shadow-lg transition duration-300">
+      <div className="flex items-center gap-4 sm:gap-5 px-6 sm:px-8 py-4 sm:py-6 bg-[#1E2024] rounded-2xl shadow-md hover:shadow-lg transition duration-300">
         {skillIcon}
-        <span className="text-white font-medium text-2xl">{skillName}</span>
+        <span className="text-white font-medium text-xl sm:text-2xl">
+          {skillName}
+        </span>
       </div>
 
       <div className="absolute inset-0 pointer-events-none">
