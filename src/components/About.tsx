@@ -1,4 +1,3 @@
-import React from "react";
 import VerticalTimeline from "./VerticalTimeline";
 import Experience from "./Experience";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,32 +13,29 @@ export default function About() {
         About
       </h3>
       <div className="flex flex-col md:flex-row items-start md:items-center mt-8 md:mt-18 space-y-10 md:space-y-0 md:space-x-10">
-        {/* Left Text Block */}
         <div className="w-full md:w-1/2">
           <div className="max-w-2xl mx-auto md:mx-0 text-[#E0E0E0] space-y-4">
             <p className="text-base sm:text-lg font-light leading-relaxed tracking-normal text-left">
-              I’m a full-stack software engineer dedicated to building intuitive,
-              high-performance web applications. I approach every project with an
-              eye for clean architecture and efficient interfaces—whether that
-              means crafting a real-time analytics dashboard or designing a
-              scalable API.
+              I’m a full-stack software engineer dedicated to building
+              intuitive, high-performance web applications. I approach every
+              project with an eye for clean architecture and efficient
+              interfaces—whether that means crafting a real-time analytics
+              dashboard or designing a scalable API.
             </p>
             <p className="text-base sm:text-lg font-light leading-relaxed tracking-normal text-left">
-              When I’m not architecting code, you’ll find me exploring new guitar
-              riffs or hiking the trails around Skopje. I believe curiosity,
-              creativity, and a willingness to venture beyond your comfort zone
-              are the true ingredients of innovation—and that’s exactly how I
-              tackle every challenge.
+              When I’m not architecting code, you’ll find me exploring new
+              guitar riffs or hiking the trails around Skopje. I believe
+              curiosity, creativity, and a willingness to venture beyond your
+              comfort zone are the true ingredients of innovation—and that’s
+              exactly how I tackle every challenge.
             </p>
           </div>
         </div>
 
-        {/* Timeline: hidden on mobile */}
         <div className="hidden md:block w-full md:w-auto">
           <VerticalTimeline />
         </div>
 
-        {/* Experience Cards */}
         <div className="w-full md:w-1/2 space-y-10">
           <Experience
             experience="IT SUPPORT SPECIALIST & WEB DEVELOPER"
@@ -56,7 +52,6 @@ export default function About() {
         </div>
       </div>
 
-      {/* Social & CV Links */}
       <div
         id="links"
         className="flex flex-wrap justify-center md:justify-start items-center space-x-4 mt-8"
