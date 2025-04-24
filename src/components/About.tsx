@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import VerticalTimeline from "./VerticalTimeline";
 import Experience from "./Experience";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,12 +9,26 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 
 export default function About() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.3 });
+
   return (
-    <section className="px-4 sm:px-7 py-8 sm:py-10">
-      <h3 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-center md:text-left">
+    <section ref={ref} className="px-4 sm:px-7 py-8 sm:py-10" id="about">
+      <motion.h3
+        initial={{ opacity: 0, y: 60 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-center md:text-left"
+      >
         About
-      </h3>
-      <div className="flex flex-col md:flex-row items-start md:items-center mt-8 md:mt-18 space-y-10 md:space-y-0 md:space-x-10">
+      </motion.h3>
+
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
+        className="flex flex-col md:flex-row items-start md:items-center mt-8 md:mt-18 space-y-10 md:space-y-0 md:space-x-10"
+      >
         <div className="w-full md:w-1/2">
           <div className="max-w-2xl mx-auto md:mx-0 text-[#E0E0E0] space-y-4">
             <p className="text-base sm:text-lg font-light leading-relaxed tracking-normal text-left">
@@ -50,9 +66,12 @@ export default function About() {
             link="https://pabau.com/"
           />
         </div>
-      </div>
+      </motion.div>
 
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
         id="links"
         className="flex flex-wrap justify-center md:justify-start items-center space-x-4 mt-8"
       >
@@ -90,7 +109,7 @@ export default function About() {
         >
           <FontAwesomeIcon icon={faFileLines} size="2x" color="#E0E0E0" />
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 }

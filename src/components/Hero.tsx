@@ -6,6 +6,8 @@ export default function Hero() {
   const [displayedText, setDisplayedText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
   const [dots, setDots] = useState("");
+  const [spin, setSpin] = useState(false);
+  const [clickedSpin, setClickedSpin] = useState(0);
 
   useEffect(() => {
     let i = 0;
@@ -33,6 +35,10 @@ export default function Hero() {
       return () => clearInterval(interval);
     }
   }, [isTyping]);
+
+  useEffect(() => {
+    setSpin(true);
+  }, []);
 
   const letterVariant = {
     hidden: { opacity: 0, y: 20 },
@@ -87,16 +93,16 @@ export default function Hero() {
       <div className="mt-8 lg:mt-0 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 perspective-[1000px] z-10">
         <motion.div
           className="relative w-full h-full"
-          drag="y"
-          dragConstraints={{ top: 0, bottom: 300 }}
-          whileTap={{ rotateY: 180 }}
           style={{ transformStyle: "preserve-3d" }}
+          animate={{ rotateY: spin ? 360 + clickedSpin * 360 : 0 }}
+          initial={{ rotateY: 0 }}
           transition={{
             type: "spring",
-            stiffness: 400,
-            damping: 30,
-            duration: 1.25,
+            stiffness: 80,
+            damping: 20,
+            duration: 3,
           }}
+          onClick={() => setClickedSpin((prev) => prev + 1)}
         >
           <img
             src="public/ivanAvatar.png"
