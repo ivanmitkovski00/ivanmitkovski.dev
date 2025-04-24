@@ -105,7 +105,7 @@ export default function Hero() {
           onClick={() => setClickedSpin((prev) => prev + 1)}
         >
           <img
-            src="public/ivanAvatar.png"
+            src="/images/ivanAvatar.png"
             alt="Ivan Mitkovski avatar"
             className="w-full h-full object-cover rounded-full border-4 border-green-400"
           />
