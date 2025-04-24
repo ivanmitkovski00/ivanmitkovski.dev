@@ -2,6 +2,8 @@ import { FC } from "react";
 import { useContactForm } from "../hooks/useContactForm";
 import { ContactFormSchema } from "../validation/contactSchema";
 import { Path } from "react-hook-form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 export const ContactForm: FC = () => {
   const { form, onSubmit, status } = useContactForm();
@@ -107,17 +109,22 @@ export const ContactForm: FC = () => {
             )}
           </div>
 
-          <button
-            type="submit"
-            disabled={isSubmitting || status === "sending"}
-            className={`w-full py-3 text-lg font-semibold rounded-xl transition-all duration-300 ${
-              isSubmitting || status === "sending"
-                ? "bg-gray-400 cursor-not-allowed text-white"
-                : "bg-green-400 hover:bg-green-500 text-[#E0E0E0] shadow-md"
-            }`}
-          >
-            {isSubmitting || status === "sending" ? "Sending…" : "Send Message"}
-          </button>
+          <div className="w-full flex justify-center">
+            <button
+              type="submit"
+              disabled={isSubmitting || status === "sending"}
+              className={`w-full sm:w-auto px-6 py-3 text-md cursor-pointer text-center font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 ${
+                isSubmitting || status === "sending"
+                  ? "bg-gray-400 cursor-not-allowed text-white"
+                  : "bg-green-700 hover:bg-green-800 text-[#E0E0E0] shadow-md"
+              }`}
+            >
+              <FontAwesomeIcon icon={faPaperPlane} />
+              {isSubmitting || status === "sending"
+                ? "Sending…"
+                : "Send Message"}
+            </button>
+          </div>
         </div>
       </form>
     </section>
