@@ -2,40 +2,52 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Project from "./Project";
 
-const projects = [
-  {
-    projectName: "PackSense AI",
-    projectDescription:
-      "An AI-powered packing assistant that creates optimized lists for your travel needs.",
-    demoLink: "#",
-    codeRepoLink: "#",
-  },
-  {
-    projectName: "BudgetWise",
-    projectDescription:
-      "Track your expenses and savings with intuitive charts and auto-categorization.",
-    demoLink: "#",
-    codeRepoLink: "#",
-  },
-  {
-    projectName: "WeatherCraft",
-    projectDescription:
-      "Real-time forecasts with stylish visuals and smart packing tips.",
-    demoLink: "#",
-    codeRepoLink: "#",
-  },
-  {
-    projectName: "DevLinker",
-    projectDescription:
-      "Connect your GitHub, portfolio, and social links in a clean one-pager.",
-    demoLink: "#",
-    codeRepoLink: "#",
-  },
-];
+type ProjectItem = {
+  projectName: string;
+  projectDescription: string;
+  demoLink: string;
+  codeRepoLink: string;
+  releaseDate: string;
+};
 
 export default function Projects() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.3 });
+
+  const projects: ProjectItem[] = [
+    {
+      projectName: "🕵️ Inspector Gadget",
+      projectDescription:
+        "You found the blur? Now find the real secrets: practice and patience.",
+      demoLink: "#",
+      codeRepoLink: "#",
+      releaseDate: "2025-06-01T00:00:00",
+    },
+    {
+      projectName: "🍪 Cookie Thief",
+      projectDescription:
+        "No cookies here, just crumbs of knowledge. Bake your own code.",
+      demoLink: "#",
+      codeRepoLink: "#",
+      releaseDate: "2025-07-01T00:00:00",
+    },
+    {
+      projectName: "🧩 Puzzle Master",
+      projectDescription:
+        "Solving puzzles beats hacking CSS. Level up your skills.",
+      demoLink: "#",
+      codeRepoLink: "#",
+      releaseDate: "2025-08-01T00:00:00",
+    },
+    {
+      projectName: "🧙‍♂️ Code Wizard",
+      projectDescription:
+        "Magic isn't in blur removal. It's in your fingertips. Cast some code spells.",
+      demoLink: "#",
+      codeRepoLink: "#",
+      releaseDate: "2025-09-01T00:00:00",
+    },
+  ];
 
   return (
     <section ref={ref} className="px-7 py-10 mt-18">
