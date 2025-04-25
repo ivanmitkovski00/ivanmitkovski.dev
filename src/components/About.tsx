@@ -101,7 +101,7 @@ export default function About() {
           <FontAwesomeIcon icon={faEnvelope} size="2x" color="#E0E0E0" />
         </a>
         <a
-          href="/Ivan Mitkovski - cv.pdf"
+          href="/Ivan Mitkovski - Curriculum Vitae.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:scale-110 transition-transform duration-200"
