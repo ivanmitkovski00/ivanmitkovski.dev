@@ -18,7 +18,7 @@ export default function About() {
         initial={{ opacity: 0, y: 60 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-center md:text-left"
+        className="text-white text-5xl sm:text-5xl md:text-6xl lg:text-7xl mb-18 font-semibold text-left"
       >
         About
       </motion.h3>
