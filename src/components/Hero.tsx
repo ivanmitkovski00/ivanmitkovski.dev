@@ -75,7 +75,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-semibold tracking-wide text-white leading-tight"
+          className="text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-heading font-semibold tracking-wide text-white leading-tight"
         >
           {renderAnimatedText("Ivan")}
           <br />
@@ -83,14 +83,16 @@ export default function Hero() {
           <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-300 via-white to-green-300 transform scale-x-0 hover:scale-x-100 transition-transform duration-300 ease-in-out" />
         </motion.h1>
 
-        <h2 className="mt-6 text-base sm:text-lg md:text-xl lg:text-2xl font-thin tracking-widest px-1 flex justify-center lg:justify-start items-center font-mono text-green-400">
+        <h2 className="mt-6 text-sm sm:text-lg md:text-xl lg:text-2xl font-thin tracking-widest px-1 flex justify-center lg:justify-start items-center font-mono text-green-400">
           {displayedText}
           <span className="w-[1ch] ml-1 animate-cursor">|</span>
-          {!isTyping && <span className="ml-2 animate-dots">{dots}</span>}
+          {!isTyping && (
+            <span className="ml-2 animate-dots hidden sm:inline-block">{dots}</span>
+          )}
         </h2>
       </div>
 
-      <div className="mt-8 lg:mt-0 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 perspective-[1000px] z-10">
+      <div className="mt-8 lg:mt-0 w-52 h-52 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 perspective-[1000px] z-10">
         <motion.div
           className="relative w-full h-full"
           style={{ transformStyle: "preserve-3d" }}

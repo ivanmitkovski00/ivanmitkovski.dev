@@ -75,7 +75,11 @@ export default function Skills() {
           >
             <Skill
               skillIcon={
-                <FontAwesomeIcon icon={icon} size="4x" color={color} />
+                <FontAwesomeIcon
+                  icon={icon}
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                  color={color}
+                />
               }
               skillName={name}
             />
