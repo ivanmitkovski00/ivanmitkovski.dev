@@ -1,54 +1,32 @@
-# React + TypeScript + Vite
+ivanmitkovski.dev
+Welcome to my personal portfolio website — built with React, TypeScript, and TailwindCSS.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a reflection of my passion for software engineering, modern web technologies, and clean, responsive design.
+It showcases my work, skills, and a little bit about who I am.
 
-Currently, two official plugins are available:
+🚀 Technologies Used
+React
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+TypeScript
 
-## Expanding the ESLint configuration
+TailwindCSS
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Vite (for fast development)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Framer Motion (for animations)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+📄 About Me
+Hi, I’m Ivan Mitkovski — a 20-year-old software engineer passionate about creating modern, user-friendly web experiences.
+I focus on clean code, scalable architecture, and continuous learning.
+Feel free to check out my portfolio and connect with me!
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+
+🌎 Live Website
+[ivanmitkovski.dev]([url](https://www.ivanmitkovski.dev/))
+
+📬 Contact
+Email: ivanmitkovski2@gmail.com
+
+LinkedIn: www.linkedin.com/in/ivanmitkovski
+
